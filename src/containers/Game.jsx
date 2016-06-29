@@ -3,9 +3,7 @@ import axios from 'axios';
 import { GameInfo, Board, Player, Enemy, DebugState } from 'components';
 import { UP, DOWN, LEFT, RIGHT } from 'helpers/constants';
 import { pluck } from 'helpers/utils';
-
-const apiKey = 'key7NLhrvemgfWoEK';
-const url = `https://api.airtable.com/v0/appQR3XNHlPWpNmsx/game/rec6kl0K0sdv2JOpP?api_key=${apiKey}`;
+import url from 'api';
 
 const getDefaultState = ({ boardSize, playerSize, highScore = 0 }) => {
     const half = Math.floor(boardSize / 2) * playerSize;
