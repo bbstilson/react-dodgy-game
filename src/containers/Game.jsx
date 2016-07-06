@@ -3,7 +3,13 @@ import axios from 'axios';
 import { GameInfo, Board, Player, Enemy, DebugState } from 'components';
 import { UP, DOWN, LEFT, RIGHT } from 'helpers/constants';
 import { pluck } from 'helpers/utils';
-import url from 'api';
+
+/*
+    Since my api key is not publicly available,
+    cloned versions will lack the ability to post
+    new high scores.
+*/
+// import url from 'api';
 
 const getDefaultState = ({ boardSize, playerSize, highScore = 0 }) => {
     const half = Math.floor(boardSize / 2) * playerSize;
@@ -251,27 +257,27 @@ export default class Game extends Component {
     }
 
     fetchGlobalHighScore = () => {
-        axios.get(url)
-            .then(data => {
-                this.setState({
-                    globalHighScore: data.data.fields.global_high_score
-                })
-            })
-            .catch(err => console.warn(err))
+        // axios.get(url)
+        //     .then(data => {
+        //         this.setState({
+        //             globalHighScore: data.data.fields.global_high_score
+        //         })
+        //     })
+        //     .catch(err => console.warn(err))
     }
 
     updateGlobalHighScore = (highScore) => {
-        axios.patch(url, {
-            "fields": {
-                "global_high_score": highScore
-            }
-        })  
-        .then(data => {
-            this.setState({
-                globalHighScore: data.data.fields.global_high_score
-            });
-        })
-        .catch(err => console.warn(err))
+        // axios.patch(url, {
+        //     "fields": {
+        //         "global_high_score": highScore
+        //     }
+        // })  
+        // .then(data => {
+        //     this.setState({
+        //         globalHighScore: data.data.fields.global_high_score
+        //     });
+        // })
+        // .catch(err => console.warn(err))
     }
 
     style = () => {
