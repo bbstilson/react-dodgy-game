@@ -1,7 +1,7 @@
 {
-  "name": "game",
-  "version": "1.0.0",
-  "description": "",
+  "name": "react-dodgy-game",
+  "version": "0.0.1",
+  "description": "an infinite dodging game built in React",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
